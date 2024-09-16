@@ -14,14 +14,11 @@ function Dashboard() {
 
     return (
         <div className={`dashboard-container ${collapsed ? 'sidebar-collapsed' : ''}`}>
-
-            {/* Barra lateral */}
             <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
                 <a href="#" className="d-block p-3 link-dark text-decoration-none" title="Icon-only" data-bs-toggle="tooltip" data-bs-placement="right">
                     <svg className="bi" width="40" height="32"><use xlinkHref="#bootstrap" /></svg>
                     <span className="visually-hidden">Icon-only</span>
                 </a>
-
                 <ul className="nav nav-pills nav-flush flex-column mb-auto text-start">
                     <li className="nav-item">
                         <Link to="#" className="nav-link py-3 border-bottom" title="Bienvenida" data-bs-toggle="tooltip" data-bs-placement="right">
@@ -36,7 +33,7 @@ function Dashboard() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="#" className="nav-link py-3 border-bottom" title="Propietarios" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <Link to="Propietarios" className="nav-link py-3 border-bottom" title="Propietarios" data-bs-toggle="tooltip" data-bs-placement="right">
                             <FontAwesomeIcon icon={faBuilding} aria-label="Propietarios" />
                             {!collapsed && <span className="nav-text">Propietarios</span>}
                         </Link>
@@ -60,17 +57,13 @@ function Dashboard() {
                         </Link>
                     </li>
                 </ul>
-
-                {/* Botón de alternancia con un icono */}
                 <div className="sidebar-toggle" onClick={toggleSidebar}>
                     <div className="toggle-icon">
                         <FontAwesomeIcon icon={collapsed ? faChevronRight : faChevronLeft} size="lg" color="#fff" />
                     </div>
                 </div>
-
-                {/* Dropdown para salir */}
                 <div className="dropdown border-top mt-auto">
-                    <a href="#" className="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="#" className="d-flex align-items-center justify-content-center p-3  text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">
                         <FontAwesomeIcon icon={faUser} />
                     </a>
                     <ul className="dropdown-menu text-small shadow" aria-labelledby="dropdownUser3">
@@ -78,8 +71,6 @@ function Dashboard() {
                     </ul>
                 </div>
             </div>
-
-            {/* Contenido principal */}
             <div className="dashboard-content">
                 <Outlet />
             </div>
