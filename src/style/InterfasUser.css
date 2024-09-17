@@ -1,52 +1,89 @@
 /* InterfasUser.css */
+
+/* Estilos globales para la página de interfaz de usuario */
 .container {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .label {
-    font-size: 18px;
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .input {
-    padding: 10px;
-    font-size: 16px;
-    width: 250px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
-  
-  .adminLink {
-    display: block;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .adminLink:hover {
-    text-decoration: underline;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  background-color: #00000000; /* Color de fondo de la página */
+}
+
+/* Imagen de fondo */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/img/logo-blanco1.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.2; /* Menor opacidad para que el fondo no distraiga */
+  z-index: -1;
+}
+
+/* Estilo para el contenido del formulario */
+.content {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1; /* Asegúrate de que esté por encima de la imagen de fondo */
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.label {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.input {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para el enlace de administrador */
+.adminLink {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.adminLink:hover {
+  text-decoration: underline;
+}

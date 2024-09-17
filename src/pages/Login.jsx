@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+/* Login.jsx */
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext'; // Importa el contexto
@@ -45,8 +46,8 @@ const Login = () => {
 
     return (
         <div className="login-container">
-            <h1>Iniciar Sesión</h1>
             <form onSubmit={handleSubmit} className="login-form">
+                <h1>Iniciar Sesión</h1>
                 <div className="form-group">
                     <label htmlFor="name">Usuario:</label>
                     <input
@@ -69,12 +70,10 @@ const Login = () => {
                         required
                     />
                 </div>
-                <div className='container m-1'>
-                    <button type="submit" className="submit-button">Iniciar sesión</button>
-                </div>
-
+                <button type="submit" className="submit-button">Iniciar sesión</button>
                 {error && <p className="error-message">{error}</p>}
             </form>
+            <a href="/login" className="adminLink">¿Eres administrador? Inicia sesión aquí</a>
         </div>
     );
 };
