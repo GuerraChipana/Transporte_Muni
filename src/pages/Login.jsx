@@ -1,18 +1,45 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
-
+/* eslint-disable no-unused-vars */
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext'; // Importa el contexto
+import '../style/Login.css';
 
 const Login = () => {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
+    
+    const { login } = useContext(AuthContext); // Usa el contexto de autenticación
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        if (name === 'TRANSPORTE_MUNI' && password === 'SISTEMAS2024') {
-            alert('Inicio de sesión exitoso!');
-        } else {
-            setError('Credenciales incorrectas.');
+
+        try {
+            const response = await fetch('http://localhost:3002/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name, password }),
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+            console.log(data); // Verifica los datos recibidos
+
+            if (data.success) {
+                login(); // Marca como autenticado
+                navigate('/Dashboard'); // Navega al Dashboard
+            } else {
+                setError(data.message || 'Credenciales incorrectas.');
+            }
+        } catch (error) {
+            console.error('Error durante el inicio de sesión:', error); // Agrega más información en caso de error
+            setError('Hubo un error en la solicitud.');
         }
     };
 
@@ -21,11 +48,11 @@ const Login = () => {
             <h1>Iniciar Sesión</h1>
             <form onSubmit={handleSubmit} className="login-form">
                 <div className="form-group">
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="name">Usuario:</label>
                     <input
-                        type="email"
-                        id="email"
-                        name="email"
+                        type="text"
+                        id="name"
+                        name="name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
@@ -44,7 +71,6 @@ const Login = () => {
                 </div>
                 <div className='container m-1'>
                     <button type="submit" className="submit-button">Iniciar sesión</button>
-                    <button type="submit" className="submit-button">Registrarte</button>
                 </div>
 
                 {error && <p className="error-message">{error}</p>}

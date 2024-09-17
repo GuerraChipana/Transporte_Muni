@@ -1,0 +1,113 @@
+/* Estilos globales para la página de login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    background-color: #f4f4f4; /* Color de fondo de la página */
+}
+
+/* Imagen de fondo */
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/img/logo-blanco1.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.2; /* Menor opacidad para que el fondo no distraiga */
+    z-index: -1; 
+}
+
+/* Contenedor del formulario */
+.login-form {
+    background: rgba(255, 255, 255, 0.95); /* Fondo blanco más opaco */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 350px; /* Reduce el ancho máximo del formulario */
+    text-align: center;
+}
+
+/* Estilo de los títulos */
+.login-container h1 {
+    font-size: 28px;
+    color: #007bff; /* Color azul más brillante */
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif; /* Fuente más limpia y moderna */
+}
+
+/* Estilos de los grupos de formulario */
+.form-group {
+    margin-bottom: 20px; /* Espacio aumentado entre grupos */
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333; /* Color más oscuro para mejor legibilidad */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px; /* Tamaño de fuente más grande para los inputs */
+}
+
+/* Estilo del botón de envío */
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.02); /* Pequeño efecto de escalado al pasar el ratón */
+}
+
+.submit-button:active {
+    background-color: #004494; /* Color más oscuro al hacer clic */
+}
+
+/* Mensaje de error */
+.error-message {
+    color: #d9534f;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Botón de registro (sin funcionalidad por ahora) */
+.register-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    color: #007bff;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.register-button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.02);
+}

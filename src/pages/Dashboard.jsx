@@ -45,7 +45,7 @@ function Dashboard() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="#" className="nav-link py-3 border-bottom" title="Seguro vehicular" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <Link to="Seguro_vehicular" className="nav-link py-3 border-bottom" title="Seguro vehicular" data-bs-toggle="tooltip" data-bs-placement="right">
                             <FontAwesomeIcon icon={faFileInvoice} aria-label="Seguro vehicular" />
                             {!collapsed && <span className="nav-text">Seguro vehicular</span>}
                         </Link>
