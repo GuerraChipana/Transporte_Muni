@@ -36,7 +36,7 @@ const InterfasUser = () => {
           <button type="submit" className="button">Buscar Vehículo</button>
         </form>
       </div>
-      <Link to="/login" className="adminLink">¿Eres administrador? Inicia sesión aquí</Link>
+      <Link to="/login" className="adminLink">Administrador</Link>
     </div>
   );
 };

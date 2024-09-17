@@ -10,7 +10,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-    
+
     const { login } = useContext(AuthContext); // Usa el contexto de autenticación
 
     const handleSubmit = async (event) => {
@@ -73,7 +73,7 @@ const Login = () => {
                 <button type="submit" className="submit-button">Iniciar sesión</button>
                 {error && <p className="error-message">{error}</p>}
             </form>
-            <a href="/login" className="adminLink">¿Eres administrador? Inicia sesión aquí</a>
+            <a href="/" className="back-button">Regresar</a>
         </div>
     );
 };
