@@ -130,7 +130,7 @@ function Seguro_vehicular() {
 
   return (
     <div className="container-fluid">
-      <h1 className="text-center mb-4">Gestión de Seguros Vehiculares</h1>
+      <h1 className="text-center mb-4">Seguros Vehiculares</h1>
       <div className="d-flex justify-content-between align-items-center mb-3">
         <Button
           variant="primary"

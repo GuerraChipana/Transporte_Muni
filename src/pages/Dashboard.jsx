@@ -39,8 +39,8 @@ function Dashboard() {
                         </Link>
                     </li>
                     <li>
-                        <Link to="#" className="nav-link py-3 border-bottom" title="Vehículos" data-bs-toggle="tooltip" data-bs-placement="right">
-                            <FontAwesomeIcon icon={faCar} aria-label="Vehículos" />
+                        <Link to="Vehiculos" className="nav-link py-3 border-bottom" title="Vehículos" data-bs-toggle="tooltip" data-bs-placement="right">
+                            <FontAwesomeIcon icon={faCar} aria-label="Vehiculos" />
                             {!collapsed && <span className="nav-text">Vehículos</span>}
                         </Link>
                     </li>
@@ -50,6 +50,10 @@ function Dashboard() {
                             {!collapsed && <span className="nav-text">Seguro vehicular</span>}
                         </Link>
                     </li>
+                    <Link to="Asociaciones" className="nav-link py-3 border-bottom" title="Asociaciones" data-bs-toggle="tooltip" data-bs-placement="right">
+                        <FontAwesomeIcon icon={faFileInvoice} aria-label="Asociaciones" />
+                        {!collapsed && <span className="nav-text">Asociaciones</span>}
+                    </Link>
                     <li>
                         <Link to="#" className="nav-link py-3 border-bottom" title="Registro del sistema" data-bs-toggle="tooltip" data-bs-placement="right">
                             <FontAwesomeIcon icon={faCog} aria-label="Registro del sistema" />

@@ -17,7 +17,7 @@
   left: 0;
   width: 100vw; /* Usa 'vw' y 'vh' para asegurar el tamaño total */
   height: 100vh;
-  background: url('/public/img/Logo-blanco2.png') no-repeat center center;
+  background: url('/img/logo-blanco2.png') no-repeat center center;
   background-size: cover;
   z-index: -1;
 }

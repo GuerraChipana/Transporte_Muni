@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button, Table, Form } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
-import '../style/Propietarios.css';
+import '../style/Secciones.css';
 import debounce from 'lodash/debounce';
 
 function Propietarios() {
